@@ -7,6 +7,6 @@ spec:
     app: result
   ports:
     - port: 80
-      targetPort: 81
+      targetPort: 80
       protocol: TCP
   type: ClusterIP

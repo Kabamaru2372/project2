@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: worker-container
-          image: kabamaru2372/worker-app:latest
+          image: pokfinner/worker:latest
           env:
             - name: DB_NAME
               valueFrom:
@@ -32,8 +32,8 @@ spec:
                   name: db-credentials
                   key: POSTGRES_PASSWORD
             - name: DB_HOST
-              value: redis-service
+              value: postgres-service
             - name: REDIS_HOST
-              value: redis
+              value: redis-service
           ports:
             - containerPort: 80

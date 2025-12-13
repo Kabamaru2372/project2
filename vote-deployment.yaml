@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: vote-container
-          image: kabamaru2372/voting-app:latest
+          image: pokfinner/vote:latest
           env:
             - name: REDIS_PORT
               value: "6379"

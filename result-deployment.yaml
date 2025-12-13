@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: result-container
-          image: kabamaru2372/result-app:latest
+          image: pokfinner/result:latest
           env:
             - name: PG_NAME
               valueFrom:
@@ -36,4 +36,4 @@ spec:
             - name: PG_PORT
               value: "5432"
           ports:
-            - containerPort: 81
+            - containerPort: 80
