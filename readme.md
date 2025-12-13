@@ -73,3 +73,9 @@ kubectl exec --stdin --tty postgres-container-name -- /bin/bash
 # Then
 psql -h postgres-service -U <user> -d <db_name>
 ```
+
+After everything is deleted, to start it all back up again, apply all deployments in right order by running:
+
+```
+./apply_all.sh
+```
