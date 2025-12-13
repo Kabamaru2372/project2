@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: project-2-mf-ebs-pvc
+  name: postgres-mf-pvc
 spec:
-  storageClassName: project-2-mf-ebs-sc
+  storageClassName: postgres-mf-sc
   accessModes:
     - ReadWriteOnce
   resources:

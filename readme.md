@@ -19,8 +19,8 @@ kubectl create secret generic db-credentials --from-literal=POSTGRES_USER=<user>
 
 ```
 # IN THIS ORDER!
-kubectl apply -f sc.yaml
-kubectl apply -f pvc.yaml
+kubectl apply -f postgres-sc.yaml
+kubectl apply -f postgres-pvc.yaml
 kubectl apply -f postgres-deployment.yaml
 kubectl apply -f postgres-service.yaml
 ```

@@ -38,4 +38,4 @@ spec:
       volumes:
         - name: project-2-postgres-storage-volume
           persistentVolumeClaim:
-            claimName: project-2-mf-ebs-pvc
+            claimName: postgres-mf-pvc
