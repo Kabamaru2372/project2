@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: result-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: result
+  template:
+    metadata:
+      labels:
+        app: result
+    spec:
+      containers:
+        - name: result-container
+          image: kabamaru2372/result-app:latest
+          env:
+            - name: PG_NAME
+              valueFrom:
+                secretKeyRef:
+                  name: db-credentials
+                  key: POSTGRES_DB
+            - name: PG_USER
+              valueFrom:
+                secretKeyRef:
+                  name: db-credentials
+                  key: POSTGRES_USER
+            - name: PG_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: db-credentials
+                  key: POSTGRES_PASSWORD
+            - name: PG_HOST
+              value: postgres-service
+            - name: PG_PORT
+              value: "5432"
+          ports:
+            - containerPort: 81

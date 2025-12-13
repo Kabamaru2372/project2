@@ -54,6 +54,15 @@ kubectl apply -f vote-deployment.yaml
 kubectl apply -f vote-service.yaml
 ```
 
+7. Set up **RESULT** container:
+   _deployment -> service_
+
+```
+# IN THIS ORDER!
+kubectl apply -f result-deployment.yaml
+kubectl apply -f result-service.yaml
+```
+
 # NOTES:
 
 Verify **POSTGRES** DB with:
