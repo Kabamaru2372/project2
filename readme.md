@@ -36,6 +36,15 @@ kubectl apply -f redis-deployment.yaml
 kubectl apply -f redis-service.yaml
 ```
 
+5. Set up **WORKER** container:
+   _deployment -> service_
+
+```
+# IN THIS ORDER!
+kubectl apply -f worker-deployment.yaml
+kubectl apply -f worker-service.yaml
+```
+
 # NOTES:
 
 Verify **POSTGRES** DB with:
