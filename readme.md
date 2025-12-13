@@ -24,3 +24,25 @@ kubectl apply -f postgres-pvc.yaml
 kubectl apply -f postgres-deployment.yaml
 kubectl apply -f postgres-service.yaml
 ```
+
+4. Set up **REDIS** container:
+   _storage class -> persistent volume claim -> deployment -> service_
+
+```
+# IN THIS ORDER!
+kubectl apply -f redis-sc.yaml
+kubectl apply -f redis-pvc.yaml
+kubectl apply -f redis-deployment.yaml
+kubectl apply -f redis-service.yaml
+```
+
+# NOTES:
+
+Verify **POSTGRES** DB with:
+
+```
+# Get into container
+kubectl exec --stdin --tty postgres-container-name -- /bin/bash
+# Then
+psql -h postgres-service -U <user> -d <db_name>
+```
