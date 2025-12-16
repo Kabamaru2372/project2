@@ -63,6 +63,14 @@ kubectl apply -f result-deployment.yaml
 kubectl apply -f result-service.yaml
 ```
 
+8. Set up NGINX-CONTROLLER:
+
+```
+helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
+helm repo update
+helm install ingress-nginx ingress-nginx/ingress-nginx --create-namespace --namespace ingress-nginx --set controller.publishService.enabled=true
+```
+
 # NOTES:
 
 Verify **POSTGRES** DB with:
