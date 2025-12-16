@@ -1,3 +1,10 @@
+echo
+read -p "Enter POSTGRES_USER: " POSTGRES_USER
+read -p "Enter POSTGRES_PASSWORD: " POSTGRES_PASSWORD
+read -p "Enter POSTGRES_DB: " POSTGRES_DB
+
+kubectl create secret generic db-credentials --from-literal=POSTGRES_USER=$POSTGRES_USER--from-literal=POSTGRES_PASSWORD=$POSTGRES_PASSWORD --from-literal=POSTGRES_DB=$POSTGRES_DB
+
 # POSTGRESS CONTAINER
 kubectl apply -f postgres-sc.yaml
 kubectl apply -f postgres-pvc.yaml
